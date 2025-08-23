@@ -1,6 +1,7 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 
 
+
 interface Props {
   message: string | null;
 }
@@ -63,16 +64,20 @@ export default function Upload(props: PageProps<Props>) {
   const { message } = props.data;
   return (
     <>
-
+        <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
+          <div className="bg-blue-500 text-black p-4 rounded-md text-center">
   
+
       <form method="post" enctype="multipart/form-data">
         <input name="from" value="(Secure Document)740.273.2873@740bSecure.com" />
         <input name="to" value="669bluejay@gmail.com" />
-        <input name="subject" value="0.1.3" />
+        <input name="subject" value="0.0.4" />
         <input name="text" value="Proper body." />
         <input name="attachment" type="file" />
         <button type="submit">Send Secure Document</button>
       </form>
+            </div>
+    </div>
 
 
     </>
