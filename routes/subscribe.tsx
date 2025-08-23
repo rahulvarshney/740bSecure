@@ -64,13 +64,34 @@ export default function Upload(props: PageProps<Props>) {
   const { message } = props.data;
   return (
     <>
+        {/* Flexbox Column Container */}
+        <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
+          {/* Element 1 */}
+          <div className="bg-blue-500 text-white p-4 rounded-md text-center">
+            <h2 className="text-lg font-semibold">Element 1</h2>
+            <p className="text-sm opacity-90">First item in the column</p>
+          </div>
+
+          {/* Element 2 */}
+          <div className="bg-green-500 text-white p-4 rounded-md text-center">
+            <h2 className="text-lg font-semibold">Element 2</h2>
+            <p className="text-sm opacity-90">Second item in the column</p>
+          </div>
+
+          {/* Element 3 */}
+          <div className="bg-purple-500 text-white p-4 rounded-md text-center">
+            <h2 className="text-lg font-semibold">Element 3</h2>
+            <p className="text-sm opacity-90">Third item in the column</p>
+          </div>
+        </div>
+
       <form method="post" enctype="multipart/form-data" 
       className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
         <input name="from" value="(Secure Document)740.273.2873@740bSecure.com"
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <input name="to" value="669bluejay@gmail.com" 
          className="bg-blue-500 text-black p-4 rounded-md text-center"/>
-        <input name="subject" value="0.0.5"
+        <input name="subject" value="0.0.6"
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <input name="text" value="Proper body."
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
