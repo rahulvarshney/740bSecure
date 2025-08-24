@@ -68,7 +68,7 @@ export default function Upload(props: PageProps<Props>) {
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
           {/* Element 1 */}
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
-            <h2 className="text-lg font-semibold">Element 1</h2>
+            <h2 className="text-lg font-semibold">Secure Document Delivery℠</h2>
             <p className="text-sm opacity-90">First item in the column</p>
           </div>
 
@@ -91,9 +91,9 @@ export default function Upload(props: PageProps<Props>) {
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <input name="to" value="669bluejay@gmail.com" 
          className="bg-blue-500 text-black p-4 rounded-md text-center"/>
-        <input name="subject" value="0.0.6"
+        <input name="subject" value="Type subject here."
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
-        <input name="text" value="Proper body."
+        <input name="text" value="Type body here."
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <input name="attachment" type="file"
          className="bg-blue-500 text-black p-4 rounded-md text-center" />

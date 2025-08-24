@@ -1,6 +1,16 @@
 import { useSignal } from "@preact/signals";
 import Counter from "../islands/Counter.tsx";
 
+const kv = await Deno.openKv();
+
+const prefs = {
+  username: "ada",
+  theme: "dark",
+  language: "en-US",
+};
+
+const result = await kv.set(["preferences", "ada"], prefs);
+
 export default function Home() {
   const count = useSignal(3);
   return (
@@ -13,7 +23,7 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Welcome to BETCH</h1>
+        <h1 class="text-4xl font-bold">Welcome to BETCH 0.0.7</h1>
         <p class="my-4">
           Try updating this message in the
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
