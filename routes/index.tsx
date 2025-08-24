@@ -10,6 +10,10 @@ const prefs = {
 };
 
 const result = await kv.set(["preferences", "ada"], prefs);
+const entry = await kv.get(["preferences", "ada"]);
+console.log(entry.key);
+console.log(entry.value);
+console.log(entry.versionstamp);
 
 export default function Home() {
   const count = useSignal(3);
@@ -23,7 +27,7 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Welcome to BETCH 0.0.7</h1>
+        <h1 class="text-4xl font-bold">Welcome to BETCH 0.0.8</h1>
         <p class="my-4">
           Try updating this message in the
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
