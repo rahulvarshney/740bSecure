@@ -1,9 +1,16 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
+import { readCsvFile } from "../dB.ts";
+
 
 
 
 interface Props {
-  message: string | null;
+  data: {  message: string | null;  };
+}
+
+interface AgentProps {
+  
+  agents: AgentData[];
 }
 
 export const handler: Handlers<Props> = {
@@ -54,16 +61,27 @@ export const handler: Handlers<Props> = {
   },
 };
 
+  const agentPromise = readCsvFile("./database/data.csv");
+  let agentName = null;
+  agentPromise.then(data => {
+    console.log('inside index.tsx');
+    console.log(data[0].Name); // Output: Data fetched successfully! (after 2 seconds)
+    agentName = data[0].Name;
+    console.log('agentName is: ' + agentName);
+  })
+
 export default function Upload(props: PageProps<Props>) {
-//  const { message } = props.data;
+  console.log('inside final thml: ' + agentName);
   return (
     <>
-        {/* Flexbox Column Container */}
+
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
-          {/* Element 1 */}
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Secure Document Delivery℠</h2>
-            <p className="text-sm opacity-90">First item in the column</p>
+            <p className="text-sm opacity-90">
+              agentName should show here:
+           { agentName }    
+            </p>
           </div>
         </div>
 
@@ -81,80 +99,18 @@ export default function Upload(props: PageProps<Props>) {
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <button type="submit">Send Secure Document</button>
       </form>
-              {/* Flexbox Column Container */}
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
-         {/* Element 2 */}
           <div className="bg-green-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 2</h2>
             <p className="text-sm opacity-90">Second item in the column</p>
           </div>
 
-          {/* Element 3 */}
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.9 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.10 © 2025 Varshney & Son</p>
           </div>
         </div>
 
     </>
   );
-}
-
-
-
-/*import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
-
-const kv = await Deno.openKv();
-
-const prefs = {
-  username: "ada",
-  theme: "dark",
-  language: "en-US",
 };
-
-const result = await kv.set(["preferences", "ada"], prefs);
-const entry = await kv.get(["preferences", "ada"]);
-console.log(entry.key);
-console.log(entry.value);
-console.log(entry.versionstamp);
-
-export default function Home() {
-  const count = useSignal(3);
-  return (
-    <div class="px-4 py-8 mx-auto bg-[#86efac]">
-      <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-        <img
-          class="my-6"
-          src="/logo.svg"
-          width="128"
-          height="128"
-          alt="the Fresh logo: a sliced lemon dripping with juice"
-        />
-        <h1 class="text-4xl font-bold">Welcome to BETCH 0.0.8</h1>
-        <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
-        </p>
-        <Counter count={count} />
-
-        <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
-          <div className="bg-blue-500 text-white p-4 rounded-md text-center">
-            <h2 className="text-lg font-semibold">Element 1</h2>
-            <p className="text-sm opacity-90">First item in the column</p>
-          </div>
-
-          <div className="bg-green-500 text-white p-4 rounded-md text-center">
-            <h2 className="text-lg font-semibold">Element 2</h2>
-            <p className="text-sm opacity-90">Second item in the column</p>
-          </div>
-
-          <div className="bg-purple-500 text-white p-4 rounded-md text-center">
-            <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">Third item in the column</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}*/
