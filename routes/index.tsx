@@ -1,9 +1,6 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
 
-
-
-
 interface Props {
   data: {  message: string | null;  };
 }
@@ -61,7 +58,7 @@ export const handler: Handlers<Props> = {
   },
 };
 
-  const agentPromise = readCsvFile("./database/data.csv");
+  let agentPromise = readCsvFile("./database/data.csv");
   let agentName = null;
   agentPromise.then(data => {
     console.log('inside index.tsx');
@@ -107,7 +104,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.10 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.11 © 2025 Varshney & Son</p>
           </div>
         </div>
 
