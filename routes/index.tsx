@@ -79,6 +79,63 @@ export default function Upload(props: PageProps<Props>) {
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Secure Document Delivery℠</h2>
+
+
+
+    <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full border border-gray-200">
+      {/* Header Section */}
+      <div className="border-b border-gray-200 pb-4 mb-4">
+        <h1 className="text-2xl font-bold text-gray-900 text-balance">Ash Singh</h1>
+        <p className="text-lg text-blue-600 font-medium">Loan Specialist</p>
+        <p className="text-sm text-gray-600 mt-1">Loans by Ash</p>
+      </div>
+
+      {/* Contact Information */}
+      <div className="space-y-3 mb-4">
+        <div className="flex items-center gap-3">
+          <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">(408) 623-8171</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <Mail className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">ash@loansbyash.com</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">www.loansbyash.com</span>
+        </div>
+      </div>
+
+      {/* Professional Details */}
+      <div className="border-t border-gray-200 pt-4 space-y-2">
+        <div className="flex items-center gap-3">
+          <Building2 className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">Pacific Bay Lending Inc</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <CreditCard className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">License: 319574</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FileText className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          <span className="text-sm text-gray-700">DRE: 1457395</span>
+        </div>
+      </div>
+
+      {/* Social Handle */}
+      <div className="mt-4 pt-4 border-t border-gray-200">
+        <p className="text-xs text-gray-500 text-center">@loansbyash</p>
+      </div>
+    </div>
+
+
+
+
+
             <p className="text-sm opacity-90">
               agentName should show here:
            { agentName }    
@@ -111,7 +168,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.13 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.14 © 2025 Varshney & Son</p>
           </div>
         </div>
 
