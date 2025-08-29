@@ -1,13 +1,6 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
-import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-github.tsx";
 
-/*import { Phone } from ""
-import { Mail }
-import { Globe }
-import { Building2 }
-import { CreditCard }
-import { FileText }*/
 
 interface Props {
   data: {  message: string | null;  };
@@ -80,9 +73,18 @@ export const handler: Handlers<Props> = {
 
 export default function Upload(props: PageProps<Props>) {
   console.log('inside final thml: ' + agentName);
+  const iconSheet = `./iconset/icons`;
+
+  const icons = ["check-circle", "exclaim"];
   return (
     <>
-
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+  stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+  <path
+    d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+</svg>
+  { agent[0].Name } 
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Secure Document Delivery℠</h2>
@@ -100,7 +102,6 @@ export default function Upload(props: PageProps<Props>) {
       {/* Contact Information */}
       <div className="space-y-3 mb-4">
         <div className="flex items-center gap-3">
-        <IconBrandGithub class="w-6 h-6" />
           <span className="text-sm text-gray-700">(408) 623-8171</span>
         </div>
 
@@ -175,7 +176,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.18 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.21 © 2025 Varshney & Son</p>
           </div>
         </div>
 
