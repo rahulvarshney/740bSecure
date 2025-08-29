@@ -1,6 +1,6 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
-import { Phone, Mail, Globe, Building2, CreditCard, FileText } from "npm:lucide";
+import { Phone, Mail, Globe, Building2, CreditCard, FileText } from "npm:lucide-react";
 
 interface Props {
   data: {  message: string | null;  };
@@ -168,7 +168,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.15 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.16 © 2025 Varshney & Son</p>
           </div>
         </div>
 
