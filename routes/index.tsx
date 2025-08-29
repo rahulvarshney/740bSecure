@@ -1,6 +1,13 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
-import { Phone, Mail, Globe, Building2, CreditCard, FileText } from "npm:lucide-react";
+import "iconify-icon";
+
+/*import { Phone } from ""
+import { Mail }
+import { Globe }
+import { Building2 }
+import { CreditCard }
+import { FileText }*/
 
 interface Props {
   data: {  message: string | null;  };
@@ -93,17 +100,17 @@ export default function Upload(props: PageProps<Props>) {
       {/* Contact Information */}
       <div className="space-y-3 mb-4">
         <div className="flex items-center gap-3">
-          <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
+        <iconify-icon icon="cil:locomotive" height="36"></iconify-icon>
           <span className="text-sm text-gray-700">(408) 623-8171</span>
         </div>
 
         <div className="flex items-center gap-3">
-          <Mail className="w-4 h-4 text-gray-500 flex-shrink-0" />
+
           <span className="text-sm text-gray-700">ash@loansbyash.com</span>
         </div>
 
         <div className="flex items-center gap-3">
-          <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
+
           <span className="text-sm text-gray-700">www.loansbyash.com</span>
         </div>
       </div>
@@ -111,17 +118,17 @@ export default function Upload(props: PageProps<Props>) {
       {/* Professional Details */}
       <div className="border-t border-gray-200 pt-4 space-y-2">
         <div className="flex items-center gap-3">
-          <Building2 className="w-4 h-4 text-gray-500 flex-shrink-0" />
+
           <span className="text-sm text-gray-700">Pacific Bay Lending Inc</span>
         </div>
 
         <div className="flex items-center gap-3">
-          <CreditCard className="w-4 h-4 text-gray-500 flex-shrink-0" />
+
           <span className="text-sm text-gray-700">License: 319574</span>
         </div>
 
         <div className="flex items-center gap-3">
-          <FileText className="w-4 h-4 text-gray-500 flex-shrink-0" />
+
           <span className="text-sm text-gray-700">DRE: 1457395</span>
         </div>
       </div>
@@ -168,7 +175,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.16 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.17 © 2025 Varshney & Son</p>
           </div>
         </div>
 
