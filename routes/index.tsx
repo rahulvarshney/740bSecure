@@ -1,6 +1,6 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
-import "iconify-icon";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-github.tsx";
 
 /*import { Phone } from ""
 import { Mail }
@@ -100,7 +100,7 @@ export default function Upload(props: PageProps<Props>) {
       {/* Contact Information */}
       <div className="space-y-3 mb-4">
         <div className="flex items-center gap-3">
-        <iconify-icon icon="cil:locomotive" height="36"></iconify-icon>
+        <IconBrandGithub class="w-6 h-6" />
           <span className="text-sm text-gray-700">(408) 623-8171</span>
         </div>
 
@@ -175,7 +175,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.17 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.18 © 2025 Varshney & Son</p>
           </div>
         </div>
 

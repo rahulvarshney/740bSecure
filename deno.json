@@ -32,8 +32,7 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "$std/": "https://deno.land/std@0.216.0/",
     "zod": "https://esm.sh/zod@3.21.4",
-    "axios-web": "https://esm.sh/axios@1.3.2?target=es2022",
-    "iconify-icon": "https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"
+    "axios-web": "https://esm.sh/axios@1.3.2?target=es2022"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
