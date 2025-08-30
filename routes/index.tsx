@@ -78,6 +78,7 @@ export default function Upload(props: PageProps<Props>) {
   const icons = ["check-circle", "exclaim"];
   return (
     <>
+
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
   viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2"
   stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
@@ -94,7 +95,9 @@ export default function Upload(props: PageProps<Props>) {
     <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full border border-gray-200">
       {/* Header Section */}
       <div className="border-b border-gray-200 pb-4 mb-4">
-        <h1 className="text-2xl font-bold text-gray-900 text-balance">Ash Singh</h1>
+        <h1 className="text-2xl font-bold text-gray-900 text-balance">
+         { agent[0].Name }       
+        </h1>
         <p className="text-lg text-blue-600 font-medium">Loan Specialist</p>
         <p className="text-sm text-gray-600 mt-1">Loans by Ash</p>
       </div>
@@ -102,12 +105,8 @@ export default function Upload(props: PageProps<Props>) {
       {/* Contact Information */}
       <div className="space-y-3 mb-4">
         <div className="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="currentColor" class="icon icon-2">
-                <path
-                  d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" />
-              </svg>
-          <span className="text-sm text-gray-700">(408) 623-8171</span>
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+          <span className="text-sm text-gray-700"> { agent[0].Cell } </span>
         </div>
 
         <div className="flex items-center gap-3">
@@ -181,7 +180,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.24 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.25 © 2025 Varshney & Son</p>
           </div>
         </div>
 
