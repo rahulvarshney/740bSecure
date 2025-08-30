@@ -111,9 +111,15 @@ export default function Upload(props: PageProps<Props>) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
           </svg>
-          <span className="text-sm text-gray-700"> { agent[0].Cell } </span>
+          <span className="text-sm text-gray-700">{ agent[0].Cell } </span>
         </div>
-
+        <div className="flex items-center gap-3">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+            fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  
+            stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-printer"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" /><path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+            <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /></svg>
+          <span className="text-sm text-gray-700">{ agent[0].Fax } </span>
+        </div>
         <div className="flex items-center gap-3">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
           fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  
@@ -121,34 +127,50 @@ export default function Upload(props: PageProps<Props>) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" />
           </svg>
-          <span className="text-sm text-gray-700">ash@loansbyash.com</span>
+          <span className="text-sm text-gray-700">{ agent[0].Email }</span>
         </div>
 
         <div className="flex items-center gap-3">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
-          fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-world-www"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4" /><path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4" /><path d="M12.5 3a16.989 16.989 0 0 1 1.828 4" /><path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4" /><path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4" /><path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4" />
+          fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  
+          stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-world-www">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4" />
+            <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4" /><path d="M12.5 3a16.989 16.989 0 0 1 1.828 4" />
+            <path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4" /><path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4" />
+            <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4" />
           <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4" /><path d="M17 10l1 4l1.5 -4l1.5 4l1 -4" />
           <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4" />
           </svg>
-          <span className="text-sm text-gray-700">www.loansbyash.com</span>
+          <span className="text-sm text-gray-700">{ agent[0].Website }</span>
         </div>
       </div>
 
       {/* Professional Details */}
       <div className="border-t border-gray-200 pt-4 space-y-2">
         <div className="flex items-center gap-3">
-
-          <span className="text-sm text-gray-700">Pacific Bay Lending Inc</span>
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+          fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
+          class="icon icon-tabler icons-tabler-outline icon-tabler-buildings"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" /><path d="M16 8h2c1 0 2 1 2 2v11" /><path d="M3 21h18" />
+          <path d="M10 12v0" /><path d="M10 16v0" /><path d="M10 8v0" /><path d="M7 12v0" /><path d="M7 16v0" />
+          <path d="M7 8v0" /><path d="M17 12v0" /><path d="M17 16v0" />
+          </svg>
+          <span className="text-sm text-gray-700">{ agent[0].Broker }</span>
         </div>
 
         <div className="flex items-center gap-3">
-
-          <span className="text-sm text-gray-700">License: 319574</span>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+            fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-id"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
+            <path d="M9 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M15 8l2 0" /><path d="M15 12l2 0" />
+            <path d="M7 16l10 0" /></svg>
+          <span className="text-sm text-gray-700">License № { agent[0].License }</span>
         </div>
 
         <div className="flex items-center gap-3">
-
-          <span className="text-sm text-gray-700">DRE: 1457395</span>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  
+            stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+          <span className="text-sm text-gray-700">DRE №: { agent[0].DRE }</span>
         </div>
       </div>
 
@@ -194,7 +216,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.29 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.30 © 2025 Varshney & Son</p>
           </div>
         </div>
 
