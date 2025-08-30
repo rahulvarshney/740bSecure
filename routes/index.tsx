@@ -69,7 +69,11 @@ export const handler: Handlers<Props> = {
     agent = data;
     console.log('agentName is: ' + agentName);
     console.log('agent[0] is: ' + agent[0].Name);
-  })
+  }).catch((error) => {
+            console.error(error.message); // "Operation failed."
+  }).finally(() => {
+            console.log("Promise settled.");
+        });
 
 export default function Upload(props: PageProps<Props>) {
   console.log('inside final thml: ' + agentName);
@@ -216,7 +220,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.30 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.31 © 2025 Varshney & Son</p>
           </div>
         </div>
 
