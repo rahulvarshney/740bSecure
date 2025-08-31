@@ -212,7 +212,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.37 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.38 © 2025 Varshney  & Son</p>
           </div>
         </div>
 
