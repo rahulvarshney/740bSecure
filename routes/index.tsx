@@ -1,5 +1,6 @@
 import { Handlers, type PageProps } from "$fresh/server.ts";
 import { readCsvFile } from "../dB.ts";
+import { formatPhoneNumber } from "../utils/phone.ts";
 
 
 interface Props {
@@ -59,37 +60,38 @@ export const handler: Handlers<Props> = {
   },
 };
 
+
+
+
   const agentPromise = readCsvFile("./database/data.csv");
-  let agentName = null;
+
   let agent = null;
   agentPromise.then(data => {
-    console.log('inside index.tsx');
-    console.log(data[0].Name); // Output: Data fetched successfully! (after 2 seconds)
-    agentName = data[0].Name;
     agent = data;
-    console.log('agentName is: ' + agentName);
-    console.log('agent[0] is: ' + agent[0].Name);
   }).catch((error) => {
             console.error(error.message); // "Operation failed."
   }).finally(() => {
             console.log("Promise settled.");
         });
 
-export default function Upload(props: PageProps<Props>) {
-  console.log('inside final thml: ' + agentName);
-  const iconSheet = `./iconset/icons`;
 
-  const icons = ["check-circle", "exclaim"];
+    /*async function fetchAgent(): Promise<string> {
+        try {
+            const data = await agentPromise;
+            console.log( 'wtf is : ' + data[0].Name);
+            return data;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            throw error; // Re-throw the error
+        }
+    }*/
+
+
+
+export default function Upload(props: PageProps<Props>) {
+
   return (
     <>
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-  viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2"
-  stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-  <path
-    d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-</svg>
-  { agent[0].Name } 
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Secure Document Delivery℠</h2>
@@ -115,14 +117,14 @@ export default function Upload(props: PageProps<Props>) {
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
           </svg>
-          <span className="text-sm text-gray-700">{ agent[0].Cell } </span>
+          <span className="text-sm text-gray-700">{ formatPhoneNumber(agent[0].Cell) } </span>
         </div>
         <div className="flex items-center gap-3">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
             fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  
             stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-printer"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" /><path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
             <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /></svg>
-          <span className="text-sm text-gray-700">{ agent[0].Fax } </span>
+          <span className="text-sm text-gray-700">{ formatPhoneNumber(agent[0].Fax) } </span>
         </div>
         <div className="flex items-center gap-3">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
@@ -171,10 +173,8 @@ export default function Upload(props: PageProps<Props>) {
         </div>
 
         <div className="flex items-center gap-3">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  
-            stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-          <span className="text-sm text-gray-700">DRE №: { agent[0].DRE }</span>
+<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg>
+          <span className="text-sm text-gray-700">DRE № { agent[0].DRE }</span>
         </div>
       </div>
 
@@ -185,13 +185,6 @@ export default function Upload(props: PageProps<Props>) {
     </div>
 
 
-
-
-
-            <p className="text-sm opacity-90">
-              agentName should show here:
-           { agentName }    
-            </p>
             <p>
               { agent[0].Name } - { agent[0].License }
             </p>
@@ -220,7 +213,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.31 © 2025 Varshney & Son</p>
+            <p className="text-sm opacity-90">0.0.34 © 2025 Varshney & Son</p>
           </div>
         </div>
 
