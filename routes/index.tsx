@@ -91,7 +91,7 @@ export default function Upload(props: PageProps<Props>) {
   return (
     <>
       <Head>
-        <title>JAdL TOPLESS</title>
+        <title>SecureDocument</title>
       </Head>
         <div className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
           <div className="bg-blue-500 text-white p-4 rounded-md text-center">
@@ -214,7 +214,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.41 © 2025 Varshney  & Son</p>
+            <p className="text-sm opacity-90">0.0.42 © 2025 Varshney  & Son</p>
           </div>
         </div>
 
