@@ -18,7 +18,7 @@ let agent = null;
 agentPromise.then(data => {
     agent = data;
   }).catch((error) => {
-            console.error(error.message); // "Operation failed."
+            console.error("error message: " + error.message); // "Operation failed."
   }).finally(() => {
             console.log("Promise settled.");
         });
@@ -33,6 +33,10 @@ export const handler: Handlers<Props> = {
     console.log('post handling');
     const form = await req.formData();
     const file = form.get("attachment") as File;
+
+    form.append('from', '(Secure Document)740.273.2873@740bSecure.com');
+    form.append('subject','Secure Document');
+    form.append('text','You have received a document.');
 
     if (!file) {
       return ctx.render({
@@ -156,13 +160,7 @@ export default function Upload(props: PageProps<Props>) {
       {/* Professional Details */}
       <div className="border-t border-gray-200 pt-4 space-y-2">
         <div className="flex items-center gap-3">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
-          fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
-          class="icon icon-tabler icons-tabler-outline icon-tabler-buildings"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" /><path d="M16 8h2c1 0 2 1 2 2v11" /><path d="M3 21h18" />
-          <path d="M10 12v0" /><path d="M10 16v0" /><path d="M10 8v0" /><path d="M7 12v0" /><path d="M7 16v0" />
-          <path d="M7 8v0" /><path d="M17 12v0" /><path d="M17 16v0" />
-          </svg>
+<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#6082B6"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-building-bank"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l18 0" /><path d="M3 10l18 0" /><path d="M5 6l7 -3l7 3" /><path d="M4 10l0 11" /><path d="M20 10l0 11" /><path d="M8 14l0 3" /><path d="M12 14l0 3" /><path d="M16 14l0 3" /></svg>
           <span className="text-sm text-gray-700">{ agent[0].broker }</span>
         </div>
         <div className="flex items-start gap-3">
@@ -194,14 +192,14 @@ export default function Upload(props: PageProps<Props>) {
 
       <form method="post" enctype="multipart/form-data" 
       className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg">
-        <input name="from" value="(Secure Document)740.273.2873@740bSecure.com"
-         className="bg-blue-500 text-black p-4 rounded-md text-center" />
+{/*        <input name="from" value="(Secure Document)740.273.2873@740bSecure.com"
+         className="bg-blue-500 text-black p-4 rounded-md text-center" />*/}
         <input name="to" value="669bluejay@gmail.com" 
          className="bg-blue-500 text-black p-4 rounded-md text-center"/>
-        <input name="subject" value="Type subject here."
+{/*}        <input name="subject" value="Type subject here."
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <input name="text" value="Type body here."
-         className="bg-blue-500 text-black p-4 rounded-md text-center" />
+         className="bg-blue-500 text-black p-4 rounded-md text-center" />*/}
         <input name="attachment" type="file"
          className="bg-blue-500 text-black p-4 rounded-md text-center" />
         <button type="submit">Send Secure Document</button>
@@ -214,7 +212,7 @@ export default function Upload(props: PageProps<Props>) {
 
           <div className="bg-purple-500 text-white p-4 rounded-md text-center">
             <h2 className="text-lg font-semibold">Element 3</h2>
-            <p className="text-sm opacity-90">0.0.44 © 2025 Varshney  & Son</p>
+            <p className="text-sm opacity-90">0.0.47 © 2025 Varshney  & Son</p>
           </div>
         </div>
 

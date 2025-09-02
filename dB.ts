@@ -16,7 +16,6 @@ export async function readCsvFile(filePath: string) {
         });
         console.log('inside readCsvFile module');
         console.log(data);
-        console.log(data[0].Name);
         return data;
     } catch (error) {
         console.error("Error reading or parsing CSV:", error);
