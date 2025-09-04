@@ -6,6 +6,6 @@ export default defineConfig({
     tailwind()
   ],
   server: {
-    port: 3001,
+    port: 8081,
   }
 });
